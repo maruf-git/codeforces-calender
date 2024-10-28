@@ -32,7 +32,7 @@ const CodeforcesContest = ({ contest }) => {
             <h1>{name}</h1>
             <p>Starts: {convertToLocalDateTime()}</p>
             <p>Duration: {convertSeconds(durationSeconds)}</p>
-            <button onClick={()=>{console.log(id)}} className="btn"><a href={`https://codeforces.com/contestRegistration/${id}`}>Open Contest</a></button>
+            <button onClick={()=>{console.log(id)}} className="btn"><a href={`https://codeforces.com/contests/${id}`}>Open Contest</a></button>
         </div >
     )
 }
