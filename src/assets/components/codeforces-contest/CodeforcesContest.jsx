@@ -18,13 +18,20 @@ const CodeforcesContest = ({ contest }) => {
           });
         return formattedDateTime;
     }
+    // converting durationSeconds to hours and minutes
+    function convertSeconds() {
+        const hours = Math.floor(durationSeconds / 3600);
+        const minutes = Math.floor((durationSeconds % 3600) / 60);
+        return `${hours} hours ${minutes!==0? minutes :""} ${minutes!==0? "minutes" :""}`;
+      }
+      
 
 
     return (
         <div className="border border-teal-400 rounded-lg p-14 flex flex-col justify-center items-center gap-3">
             <h1>{name}</h1>
             <p>Starts: {convertToLocalDateTime()}</p>
-            <p>Duration: {durationSeconds}</p>
+            <p>Duration: {convertSeconds(durationSeconds)}</p>
             <button onClick={()=>{console.log(id)}} className="btn"><a href={`https://codeforces.com/contestRegistration/${id}`}>Open Contest</a></button>
         </div >
     )
